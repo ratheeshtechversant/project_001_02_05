@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5/css/bootstrap.min.css">
+    <script src="bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5/jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div id="modal-pop-up"></div>
+
+        <!-- pagination and date on top -->
+        <div class="clearfix">
+            <div class="float-end mt-2"><span id="dt"></span></div>
+            <div class="float-end mt-2">
+                
+                <div class="btn-group">
+                    <button class="btn border rounded me-1"><<</button>
+                    <button class="btn border rounded me-1"><</button>
+                    <button class="btn border rounded me-1">115/115</button>
+                    <button class="btn border rounded me-1" disabled>></button>
+                    <button class="btn border rounded me-3" disabled>>></button>
+                </div>                
+            </div>
+            
+        </div>
+
+    <!-- toggleable tab section-1 for vitals table and graphs -->
+
+        <div>
+            <ul class="nav nav-tabs mt-2">
+                <li class="nav-item">
+                    <button id="vt-tab" class="nav-link active text-secondary 
+                    border border-bottom-0 me-1 mt-2" data-bs-toggle="tab" 
+                    data-bs-target="#tab1" aria-selected="true">Vitals Table</button>
+                </li>
+                <li class="nav-item">
+                    <button id="graph-tab" class="nav-link  text-secondary 
+                    border border-bottom-0 mt-2" data-bs-toggle="tab" 
+                    data-bs-target="#tab2" aria-selected="false">Graphs</button>
+                </li>
+            </ul>
+        </div>
+
+
+
+    <div class="tab-content" id="myTabContent">
+        <div id="tab1" class="tab-pane fade show active">
+            
+            <!-- toggleable tab section 2 for general,cardiac,respiratory and neuro -->
+
+            <ul class="nav nav-tabs mt-2 " id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-secondary 
+                    active border border-bottom-0 me-1 mt-2" id="general-tab"
+                    data-bs-toggle="tab" data-bs-target="#general"
+                    aria-controls="general" aria-selected="true">General</button>
+                </li>
+                <li class="nav-item ">
+                    <button class="nav-link text-secondary
+                     border border-bottom-0 me-1 mt-2" id="cardiac-tab"
+                     data-bs-toggle="tab" data-bs-target="#cardiac"
+                     aria-controls="cardiac" aria-selected="false">Cardiac</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link text-secondary 
+                    border border-bottom-0 me-1 mt-2" id="respiratory-tab"
+                    data-bs-toggle="tab" data-bs-target="#respiratory"
+                    aria-controls="respiratory" aria-selected="true">Respiratory</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link text-secondary 
+                    border border-bottom-0 me-1 mt-2" id="neuro-tab"
+                    data-bs-toggle="tab" data-bs-target="#neuro"
+                    aria-controls="neuro" aria-selected="true">Neuro</button>
+                </li>
+            </ul>
+            <div>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="general" 
+                    role="tabpanel" aria-labelledby="general-tab">
+                    <button id="general-btn" class="btn border mt-2 " style="margin-left: 28px;" 
+                    data-bs-toggle="modal" data-bs-target="#modal1">+</button>
+                </div>
+                    <div class="tab-pane fade" id="cardiac" 
+                    role="tabpanel" aria-labelledby="cardiac-tab">
+                    <button id="cardiac-btn" class="btn border mt-2" style="margin-left: 122px;" 
+                    data-bs-toggle="modal" data-bs-target="#modal1">+</button>
+                </div>
+                    <div class="tab-pane fade" id="respiratory" 
+                    role="tabpanel" aria-labelledby="respiratory-tab">
+                    <button id="respiratory-btn" class="btn border mt-2" style="margin-left: 230px;" 
+                    data-bs-toggle="modal" data-bs-target="#modal1">+</button>
+                </div>
+                    <div class="tab-pane fade" id="neuro" 
+                    role="tabpanel" aria-labelledby="neuro-tab">
+                    <button id="neuro-btn" class="btn border mt-2" style="margin-left: 330px;" 
+                    data-bs-toggle="modal" data-bs-target="#modal1">+</button>
+                </div>
+                  </div>
+            </div>
+
+        </div>
+        <div id="tab2" class="tab-pane fade">
+            <p>second tab</p>
+        </div>
+    </div>
+
+        
+        <div>
+            <ul class="nav nav-tabs mt-3" style="pointer-events: none;">
+                <li class="nav-item">
+                    <button class="nav-link text-secondary active border border-bottom-0 me-1">Hourly</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link text-secondary border border-bottom-0 me-1">All</button>
+                </li>
+            </ul>
+        </div>
+       
+
+        
+    
+    </div>
+    
+    <script>
+        // display date
+        let dt = new Date();
+        let mth = () =>{
+            if(dt.getMonth()<10){
+                return "0"+(dt.getMonth()+1);
+            }
+        }
+        let dat = () =>{
+            if(dt.getDate()<10){
+                return "0"+(dt.getDate());
+            }
+        }
+        document.getElementById("dt").innerHTML = dat() + "/" +mth() + "/" + dt.getFullYear();
+    </script>
+    <script>
+        $(document).ready(function(){
+             $("#modal-pop-up").load("sample.html");
+             
+        });
+    </script>
+</body>
+</html>

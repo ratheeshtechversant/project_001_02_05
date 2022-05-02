@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5/css/bootstrap.min.css">
+    <script src="bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5/jquery.js"></script>
+    <style>
+        .clr{
+            background-color: rgb(203, 212, 212);
+        }
+        hr{
+            margin: 0;
+            padding: 0;
+        }
+        .modal-hd{
+            background-color: rgb(203, 212, 212);
+        }
+    </style>
+    <script>
+        // function change(id){
+        //     if(id=="general"){
+        //         document.getElementById("dept").innerHTML = "General Vital"
+        //     }
+        //     if(id=="cardiac"){
+        //         document.getElementById("dept").innerHTML = "Cardiac Vital"
+        //     }
+        // }
+        
+
+        
+    </script>
+    <script>
+        $("#general-btn").click(function(){
+            // console.log("hi");
+            $("#dept").text("General Vital");
+        });
+        $("#cardiac-btn").click(function(){
+            $("#dept").text("Cardiac Vital");
+        });
+        $("#respiratory-btn").click(function(){
+            $("#dept").text("Respiratory Vital");
+        });
+        $("#neuro-btn").click(function(){
+            $("#dept").text("Neuro Vital");
+        });
+       
+    </script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <!-- <button class="btn btn-primary" id="general" data-bs-toggle="modal" data-bs-target="#modal1" onclick="change(id)">General Vital</button> -->
+    <!-- <button class="btn btn-primary" id="cardiac" data-bs-toggle="modal" data-bs-target="#modal1" onclick="change(id)">Cardiac Vital</button> -->
+    <div class="modal" id="modal1">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="m-hd p-1">
+                <div class="modal-header rounded p-1 modal-hd">
+                    <h5 class="modal-title ps-2"><span id="dept">****</span>-Bounce,David 81 M</h5>
+                    <button class="btn pe-2 pt-0 pb-0 fw-bold" data-bs-dismiss="modal">X</button>
+                </div>
+            </div>
+                <div class="modal-body" >
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-4">
+
+                       
+                    <!-- <div class="mx-auto" style="width: 400px;"> -->
+                    <table class="table table-borderless table-sm" id="tb">
+                        <tr>
+                            <td></td>
+                            <td>Date</td>
+                            <td>Time</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">Vital:</td>
+                            <td><input type="date" name="" id="" class="form-control"></td>
+                            <td><input type="time" name="" id="" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">Temp:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>℃</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">Pulse:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>BPM</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">S BP:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>mmHg</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">D BP:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>mmHg</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">RR:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>BPM</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">O<sup>2</sup>Sat:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>%</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">FiO<sup>2</sup>:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">PEEP:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>cmH<sub>2</sub>O</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">Weight:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>Kg</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">Height:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>cm</td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">BMI:</td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>Kg/m<sup>2</sup></td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">AVPU:</td>
+                            <td>
+                                <select name="" id="" class="form-select">
+                                    <option value="">--select--</option>
+                                    <option value="">Alert</option>
+                                    <option value="">Verbal</option>
+                                    <option value="">Pain</option>
+                                    <option value="">Unresponsive</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-end">GCS:</td>
+                            <td>
+                                <select name="" id="" class="form-select">
+                                    <option value="">--select--</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                    <option value="">7</option>
+                                    <option value="">8</option>
+                                    <option value="">9</option>
+                                    <option value="">10</option>
+                                    <option value="">11</option>
+                                    <option value="">12</option>
+                                    <option value="">13</option>
+                                    <option value="">14</option>
+                                    <option value="">15</option>
+                                    
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                
+                <!-- </div> -->
+            </div>
+            <div class="col"></div>
+        </div>
+
+                </div>
+                <hr>
+                    <div class="clearfix">
+                        <span class="float-start p-3"><button class="btn clr">cancel</button></span>
+                        <span class="float-end p-3"><button class="btn clr">submit</button></span>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // document.getElementById("tb").classList.add("table-hover")
+</script>
+    
+</body>
+</html>
